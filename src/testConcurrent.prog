@@ -1,0 +1,19 @@
+#!/bin/sh
+echo 'STAMPA PARAMETRI : '
+echo '0: '$0
+echo '1: '$1
+echo '2: '$2
+echo '3: '$3
+echo '4: '$4
+echo '5: '$5
+
+export JAVA8HOME=/data1/TESTR12/apps/jre1.8.0_192
+echo JAVA8HOME = $JAVA8HOME
+export REPLYLIB=/data1/TESTR12/apps/apps_st/comn/java/lib/reply
+echo REPLYLIB = $REPLYLIB
+export XXHCLASSPATH=$XXH_TOP/temp/testConcurrent.jar:$REPLYLIB/commons-io-2.4.jar:$REPLYLIB/log4j-api-2.3.jar:$REPLYLIB/log4j-core-2.3.jar
+$JAVA8HOME/bin/java -version
+
+
+$JAVA8HOME/bin/java -cp $XXHCLASSPATH -Xdiag xview.testConcurrent "$0" "$1"
+exit 0
